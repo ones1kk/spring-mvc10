@@ -17,7 +17,6 @@ public class FormattingConversionServiceTest {
         DefaultConversionService conversionService = new DefaultConversionService();
         FormattingConversionService formatter = new FormattingConversionService();
 
-
         // 컨버터 등록
         conversionService.addConverter(new StringToIpPortConverter());
         conversionService.addConverter(new IpPortToStringConverter());
@@ -27,7 +26,6 @@ public class FormattingConversionServiceTest {
 
         // 컨버터 사용
         IpPort ipPort = conversionService.convert("127.0.0.1:8080", IpPort.class);
-
         assertThat(ipPort).isEqualTo(new IpPort("127.0.0.1", 8080));
 
         // 포멧터 사용
